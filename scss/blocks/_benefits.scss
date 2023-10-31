@@ -1,0 +1,35 @@
+.benefits {
+    position: relative;
+    padding: 120px 0;
+
+    // размещаем 'II' по рамке контейнера
+    &::after {
+        content: "II";
+
+        left: calc(50% + 555px);
+        transform: translate(-50%, -12.5%);
+
+        @include decorNumber;
+    }
+}
+
+.benefits__row {
+    display: flex;
+    column-gap: 70px;
+}
+
+.benefits__item {
+    text-align: center;
+}
+
+.benefits__item-img {
+    margin-bottom: 53px;
+}
+
+.benefits__item-text {
+    font-family: $font-secondary;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.35; /* 135% */
+
+}

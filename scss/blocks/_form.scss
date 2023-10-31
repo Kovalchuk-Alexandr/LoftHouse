@@ -1,0 +1,48 @@
+.form {
+}
+
+.form-input {
+    // width: 255px;
+    height: 50px;
+    padding: 12px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: $white;
+    font-size: 14px;
+    line-height: 1.93;
+    transition: background-color 0.2s ease-in;
+    
+
+    &::placeholder {
+        color: $placeholder;
+    }
+
+    &:focus {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+}
+
+.form__privacy {
+    color: $muted;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.23; /* 123.077% */
+}
+
+.form__btn {
+    height: 50px;
+    padding: 12px;
+    background: $accent;
+    color: $white;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.2s ease-in;
+    
+
+    // При наведении делаем цвет более насыщенным
+    &:hover {
+       background-color: saturate($accent, 15%);
+    }
+}

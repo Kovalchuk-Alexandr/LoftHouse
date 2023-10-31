@@ -1,0 +1,30 @@
+.apartments {
+    position: relative;
+
+    // размещаем 'III' по рамке контейнера
+    &::before {
+        content: "III";
+        
+        right: calc(50% + 555px);
+        transform: translate(50%, -12.5%);
+        
+        @include decorNumber;
+    }
+}
+
+.apartments__title {
+    margin-bottom: 88px;
+    
+ }
+
+
+.apartments__cards {
+    display: grid;
+
+    // для десктопа - 2 карты по 1 фрейму
+    grid-template-columns: repeat(2,  1fr);
+
+    // для мобильной, как ниже. Иначе получается три карты вряд
+    // grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 30px;
+}

@@ -1,0 +1,76 @@
+// Подключаем шрифты
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700&family=Roboto:wght@300&display=swap');
+ 
+/*
+font-family: 'Playfair Display', serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/ 
+
+// Для временного скрытия блоков
+.none {
+    display: none !important;
+}
+
+body {
+    font-family: $font-main;
+    background-color: $dark;
+    color: $white;
+    font-size: 16px;
+}
+
+a {
+    color: $white;
+    transition: all 0.2s ease-in;
+    
+
+    &:hover {
+        color: $accent;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1140px;
+
+    &--sm {
+        max-width: 840px; // = 794 + 2*15px
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+// ==============  Скрываем текст =============== //
+.visually-hidden {
+    /* Contain text with 1px box (Помещаем в 1px)*/
+    height: 1px;
+    overflow: hidden;
+    width: 1px;
+
+    /* Keep the layout (Помещаем в отдельный слой, чтобы не мешал)*/
+    position: absolute;
+
+    /* Remove anny visible trace (e.g. background color) */
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px 1px 1px 1px); 
+    clip-path: inset(50%); /* browsers in the future*/
+
+    /* Prevent the screen reader to skip spaces between words */
+    white-space: nowrap;
+}
+
+.title-2 {
+    color: var(--accent, #D4C17F);
+    font-family: $font-accent;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.link-bold {
+    color: $accent;
+    font-weight: 700;
+}
