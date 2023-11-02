@@ -1,4 +1,5 @@
 .video {
+    overflow: hidden;
     text-align: center;
 
     position: relative;
@@ -44,6 +45,11 @@
     top: 50%;
     transform: translate(-50%, -50%);
     transition: all 0.2s ease-in;
+
+    @include mediaPhone {
+        width: 80px;
+        height: 80px;
+    }
     
 }
 

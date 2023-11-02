@@ -68,9 +68,18 @@ a {
     font-family: $font-accent;
     font-size: 36px;
     font-weight: 700;
+
+    @include mediaTablet {
+        font-size: 28px;
+    }
 }
 
 .link-bold {
     color: $accent;
     font-weight: 700;
+}
+
+// Добавляем селектор, чтобы в мобильной версии нельзя было скролить
+.no-scroll {
+    overflow-y: hidden;
 }

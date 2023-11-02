@@ -15,6 +15,16 @@
 .apartments__title {
     margin-bottom: 88px;
     
+    @include mediaTablet {
+        margin-bottom: 44px;
+
+        @include mediaPhone {
+            text-align: center;
+        }
+        // @media screen and (max-width: 640px) {
+        //     text-align: center;
+        // } 
+    }
  }
 
 
@@ -27,4 +37,15 @@
     // для мобильной, как ниже. Иначе получается три карты вряд
     // grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     gap: 30px;
+
+    @include mediaTablet {
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+
+        @include mediaPhone {
+            text-align: center;
+        }
+        // @media screen and (max-width: 640px) {
+        //     text-align: center;
+        // } 
+    }
 }
