@@ -32,9 +32,10 @@ phoneInputs.forEach((input) => {
 
 /** ============ Google Maps ============ **/
 function initMap() {
+    const position = { lat: 48.470777683115294, lng: 35.0354274111957 };
     // Styles a map in night mode.
     const map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 48.47077056987912, lng: 35.03542741100447 },
+        center: position,
         zoom: 17,
         styles: [
             { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
@@ -123,12 +124,17 @@ function initMap() {
             },
         ],
     });
+
+    // const marker = new AdvancedMarkerView({
+    new google.maps.Marker({
+        map: map,
+        position: position,
+        animation: google.maps.Animation.DROP,
+        title: "Dmytra Yavornytskoho Ave, 72б",
+    });
 }
 
-window.initMap = initMap;
-
-
-
+// window.initMap = initMap;
 
 /** ============ Google Maps ============ **/
 // Initialize and add the map
@@ -136,9 +142,9 @@ let map;
 
 // async function initMap() {
 //     // The location of Uluru
-//     const position = { lat: 48.47077056987912, lng: 35.03542741100447 };
+//     const position = { lat: 48.470777683115294, lng: 35.0354274111957 };
+//     // 48.470777683115294, 35.0354274111957
 //     // const position = { lat: -25.344, lng: 131.031 };
-//     // 48.456332074346854, 35.0722988052302; Днепр, ул.Дмитрия Донцова 8
 //     // проспект Дмитра Яворницького, 72б, Дніпро, Дніпропетровська область, 49000 (48.47077056987912, 35.03542741100447)
 //     // Dmytra Yavornytskoho Ave, 72б, Dnipro, Dnipropetrovs'ka oblast, 49000
 //     // Request needed libraries.
@@ -157,7 +163,7 @@ let map;
 //                 elementType: "geometry",
 //                 stylers: [
 //                     {
-//                         color: "#242f3e",
+//                         color: "#1d2c4d",
 //                     },
 //                 ],
 //             },
@@ -165,7 +171,7 @@ let map;
 //                 elementType: "labels.text.fill",
 //                 stylers: [
 //                     {
-//                         color: "#746855",
+//                         color: "#8ec3b9",
 //                     },
 //                 ],
 //             },
@@ -173,16 +179,61 @@ let map;
 //                 elementType: "labels.text.stroke",
 //                 stylers: [
 //                     {
-//                         color: "#242f3e",
+//                         color: "#1a3646",
 //                     },
 //                 ],
 //             },
 //             {
-//                 featureType: "administrative.locality",
+//                 featureType: "administrative.country",
+//                 elementType: "geometry.stroke",
+//                 stylers: [
+//                     {
+//                         color: "#4b6878",
+//                     },
+//                 ],
+//             },
+//             {
+//                 featureType: "administrative.land_parcel",
 //                 elementType: "labels.text.fill",
 //                 stylers: [
 //                     {
-//                         color: "#d59563",
+//                         color: "#64779e",
+//                     },
+//                 ],
+//             },
+//             {
+//                 featureType: "administrative.province",
+//                 elementType: "geometry.stroke",
+//                 stylers: [
+//                     {
+//                         color: "#4b6878",
+//                     },
+//                 ],
+//             },
+//             {
+//                 featureType: "landscape.man_made",
+//                 elementType: "geometry.stroke",
+//                 stylers: [
+//                     {
+//                         color: "#334e87",
+//                     },
+//                 ],
+//             },
+//             {
+//                 featureType: "landscape.natural",
+//                 elementType: "geometry",
+//                 stylers: [
+//                     {
+//                         color: "#023e58",
+//                     },
+//                 ],
+//             },
+//             {
+//                 featureType: "poi",
+//                 elementType: "geometry",
+//                 stylers: [
+//                     {
+//                         color: "#283d6a",
 //                     },
 //                 ],
 //             },
@@ -191,16 +242,25 @@ let map;
 //                 elementType: "labels.text.fill",
 //                 stylers: [
 //                     {
-//                         color: "#d59563",
+//                         color: "#6f9ba5",
+//                     },
+//                 ],
+//             },
+//             {
+//                 featureType: "poi",
+//                 elementType: "labels.text.stroke",
+//                 stylers: [
+//                     {
+//                         color: "#1d2c4d",
 //                     },
 //                 ],
 //             },
 //             {
 //                 featureType: "poi.park",
-//                 elementType: "geometry",
+//                 elementType: "geometry.fill",
 //                 stylers: [
 //                     {
-//                         color: "#263c3f",
+//                         color: "#023e58",
 //                     },
 //                 ],
 //             },
@@ -209,7 +269,7 @@ let map;
 //                 elementType: "labels.text.fill",
 //                 stylers: [
 //                     {
-//                         color: "#6b9a76",
+//                         color: "#3C7680",
 //                     },
 //                 ],
 //             },
@@ -218,16 +278,7 @@ let map;
 //                 elementType: "geometry",
 //                 stylers: [
 //                     {
-//                         color: "#38414e",
-//                     },
-//                 ],
-//             },
-//             {
-//                 featureType: "road",
-//                 elementType: "geometry.stroke",
-//                 stylers: [
-//                     {
-//                         color: "#212a37",
+//                         color: "#304a7d",
 //                     },
 //                 ],
 //             },
@@ -236,7 +287,16 @@ let map;
 //                 elementType: "labels.text.fill",
 //                 stylers: [
 //                     {
-//                         color: "#9ca5b3",
+//                         color: "#98a5be",
+//                     },
+//                 ],
+//             },
+//             {
+//                 featureType: "road",
+//                 elementType: "labels.text.stroke",
+//                 stylers: [
+//                     {
+//                         color: "#1d2c4d",
 //                     },
 //                 ],
 //             },
@@ -245,7 +305,7 @@ let map;
 //                 elementType: "geometry",
 //                 stylers: [
 //                     {
-//                         color: "#746855",
+//                         color: "#2c6675",
 //                     },
 //                 ],
 //             },
@@ -254,7 +314,7 @@ let map;
 //                 elementType: "geometry.stroke",
 //                 stylers: [
 //                     {
-//                         color: "#1f2835",
+//                         color: "#255763",
 //                     },
 //                 ],
 //             },
@@ -263,25 +323,52 @@ let map;
 //                 elementType: "labels.text.fill",
 //                 stylers: [
 //                     {
-//                         color: "#f3d19c",
+//                         color: "#b0d5ce",
+//                     },
+//                 ],
+//             },
+//             {
+//                 featureType: "road.highway",
+//                 elementType: "labels.text.stroke",
+//                 stylers: [
+//                     {
+//                         color: "#023e58",
 //                     },
 //                 ],
 //             },
 //             {
 //                 featureType: "transit",
-//                 elementType: "geometry",
+//                 elementType: "labels.text.fill",
 //                 stylers: [
 //                     {
-//                         color: "#2f3948",
+//                         color: "#98a5be",
+//                     },
+//                 ],
+//             },
+//             {
+//                 featureType: "transit",
+//                 elementType: "labels.text.stroke",
+//                 stylers: [
+//                     {
+//                         color: "#1d2c4d",
+//                     },
+//                 ],
+//             },
+//             {
+//                 featureType: "transit.line",
+//                 elementType: "geometry.fill",
+//                 stylers: [
+//                     {
+//                         color: "#283d6a",
 //                     },
 //                 ],
 //             },
 //             {
 //                 featureType: "transit.station",
-//                 elementType: "labels.text.fill",
+//                 elementType: "geometry",
 //                 stylers: [
 //                     {
-//                         color: "#d59563",
+//                         color: "#3a4762",
 //                     },
 //                 ],
 //             },
@@ -290,7 +377,7 @@ let map;
 //                 elementType: "geometry",
 //                 stylers: [
 //                     {
-//                         color: "#17263c",
+//                         color: "#0e1626",
 //                     },
 //                 ],
 //             },
@@ -299,16 +386,7 @@ let map;
 //                 elementType: "labels.text.fill",
 //                 stylers: [
 //                     {
-//                         color: "#515c6d",
-//                     },
-//                 ],
-//             },
-//             {
-//                 featureType: "water",
-//                 elementType: "labels.text.stroke",
-//                 stylers: [
-//                     {
-//                         color: "#17263c",
+//                         color: "#4e6d70",
 //                     },
 //                 ],
 //             },
@@ -323,7 +401,7 @@ let map;
 //     });
 // }
 
-// window.initMap = initMap;
+window.initMap = initMap;
 // initMap();
 
 
