@@ -1,6 +1,6 @@
 # LoftHouse
 
-## Адаптивная HTML SCSS верстка лендинга жилого комплекса LoftHouse
+### Адаптивная HTML SCSS верстка лендинга жилого комплекса LoftHouse
 
 - HTML,
 - CSS, SCSS, миксины и переменные,
